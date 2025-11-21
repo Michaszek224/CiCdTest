@@ -42,14 +42,14 @@ func TestDiv(t *testing.T) {
 }
 
 func TestDivByZero(t *testing.T) {
-	got, err := div(9, 3)
+	_, err := div(9, 0)
 
-	if err != nil {
-		t.Errorf("div(9, 3) error = %v", err)
+	if err == nil {
+		t.Fatal("expected error while dividing by zero")
 	}
 
-	want := 3
-	if got != want {
-		t.Errorf("div(9, 3) = %d, want %d", got, want)
+	expected := "division by zero is not allowed"
+	if err.Error() != expected {
+		t.Errorf("div(9, 0) error = %v, want %v", err, expected)
 	}
 }
