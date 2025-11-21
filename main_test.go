@@ -28,6 +28,13 @@ func TestDiv(t *testing.T) {
 	}
 }
 
+func AnotehrDivTest(t *testing.T) {
+	got := div(9, 4)
+	want := 2
+	if got != want {
+		t.Errorf("div(9, 0) = %d, want %d", got, want)
+	}
+}
 func TestMul(t *testing.T) {
 	got := mul(4, 2)
 	want := 8
