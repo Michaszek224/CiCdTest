@@ -28,7 +28,7 @@ func TestDiv(t *testing.T) {
 	}
 }
 
-func AnotehrDivTest(t *testing.T) {
+func TestAnotehrDiv(t *testing.T) {
 	got := div(9, 4)
 	want := 2
 	if got != want {
