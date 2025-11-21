@@ -20,25 +20,36 @@ func TestSub(t *testing.T) {
 	}
 }
 
+func TestMul(t *testing.T) {
+	got := mul(4, 2)
+	want := 8
+	if got != want {
+		t.Errorf("mul(4, 2) = %d, want %d", got, want)
+	}
+}
+
 func TestDiv(t *testing.T) {
-	got := div(9, 3)
+	got, err := div(9, 3)
+
+	if err != nil {
+		t.Errorf("div(9, 3) error = %v", err)
+	}
+
 	want := 3
 	if got != want {
 		t.Errorf("div(9, 3) = %d, want %d", got, want)
 	}
 }
 
-func TestAnotehrDiv(t *testing.T) {
-	got := div(9, 4)
-	want := 2
-	if got != want {
-		t.Errorf("div(9, 0) = %d, want %d", got, want)
+func TestDivByZero(t *testing.T) {
+	got, err := div(9, 3)
+
+	if err != nil {
+		t.Errorf("div(9, 3) error = %v", err)
 	}
-}
-func TestMul(t *testing.T) {
-	got := mul(4, 2)
-	want := 8
+
+	want := 3
 	if got != want {
-		t.Errorf("mul(4, 2) = %d, want %d", got, want)
+		t.Errorf("div(9, 3) = %d, want %d", got, want)
 	}
 }
