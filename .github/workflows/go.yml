@@ -72,4 +72,7 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: michaszek224/test_docker_repository:latest
+          tags: |
+            michaszek224/test_docker_repository:latest
+            michaszek224/test_docker_repository:${{ github.sha }}
+            michaszek224/test_docker_repository:v1.0.${{ github.run_number }}
