@@ -8,12 +8,14 @@ on:
       - '**.go'
       - 'go.mod'
       - 'go.sum'
+      - 'Dockerfile'
   pull_request:
     branches: [ "main" ]
     paths:
       - '**.go'
       - 'go.mod'
       - 'go.sum'
+      - 'Dockerfile'
 
 jobs:
   lint:
